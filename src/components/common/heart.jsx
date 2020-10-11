@@ -1,21 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Heart extends Component {
-  render() {
-    return (
-      <i
-        onClick={this.props.onClick}
-        className={this.getHeartClass()}
-        style={{ cursor: "pointer" }}
-        aria-hidden="true"
-      />
-    );
-  }
+const Heart = (props) => {
+  let classes = "fa fa-heart";
+  if (!props.liked) classes += "-o";
 
-  getHeartClass() {
-    let heartClass = "fa fa-heart";
-    return this.props.liked ? heartClass : heartClass + "-o";
-  }
-}
+  return (
+    <i
+      onClick={props.onClick}
+      className={classes}
+      style={{ cursor: "pointer" }}
+      aria-hidden="true"
+    />
+  );
+};
 
 export default Heart;
