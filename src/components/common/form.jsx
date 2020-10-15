@@ -59,7 +59,7 @@ class Form extends Component {
     );
   }
 
-  renderInput(name, label,type='text', autoFocus = false) {
+  renderInput(name, label, type = "text") {
     const { data, errors } = this.state;
     return (
       <Input
@@ -68,7 +68,6 @@ class Form extends Component {
         value={data[name]}
         type={type.toString()}
         onChange={this.handleChange}
-        autoFocus={autoFocus}
         error={errors[name]}
       />
     );
