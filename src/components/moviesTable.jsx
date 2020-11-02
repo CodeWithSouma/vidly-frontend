@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Heart from "./common/heart";
 import Table from "./common/table";
 import Auth from "../services/authService";
-import authService from "../services/authService";
 
 class MoviesTable extends Component {
   columns = [
@@ -42,7 +41,7 @@ class MoviesTable extends Component {
 
   constructor() {
     super();
-    const user = authService.getCurrentUser();
+    const user = Auth.getCurrentUser();
     if (user && user.isAdmin) {
       this.columns.push(this.deleteColumn);
     }
